@@ -31,6 +31,7 @@ def main():
 
 
 if __name__ == "__main__":
+    """ PARSE TESTS """
     assert parse('https://example.com/path/to/page?name=ferret&color=purple') == {'name': 'ferret', 'color': 'purple'}
     #  this one suppose to fail if validate it properly
     assert parse('https://example.com/path/to/page?name=ferret&color=purple&') == {'name': 'ferret', 'color': 'purple'}
@@ -57,5 +58,5 @@ if __name__ == "__main__":
     # color=purple color=purple -> color: purple
     q = 'https://example.com/page?name=ferret&name=sam&color=purple&color=purple'
     assert parse(q) == {'name': 'ferret&sam', 'color': 'purple'} or {'name': 'sam&ferret', 'color': 'purple'}
-
+    """ END PARSE TESTS """
     main()
